@@ -2,6 +2,16 @@ body {
     background: #eef;
 	color: #000;
 	font-weight: normal;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-family: sans-serif;
+}
+
+h2 {
+	font-family: sans-serif;
+	color: #c30000;
 }
 
 .magenta {
@@ -11,7 +21,15 @@ body {
 .cyan {
 	background-color: #0ff;
 }
-#tweets {
+
+#avlfood {
 	margin-top: -30;
-		margin-bottom: -30;
+	margin-bottom: -30;
+	width: 300px;
+	background-color: #c30000;
+	font-size: 12px;
+}
+
+#avlfood p {
+		padding: 5px;
 }

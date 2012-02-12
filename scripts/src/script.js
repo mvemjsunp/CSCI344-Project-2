@@ -4,14 +4,14 @@
 
 function main() {
 
-	var s = new Spotter("twitter.search",
-						{q:"'super bowl'", period:120},				//{key:"value", key:"value"},    120 period will take a 120 s break between the 750ms of feed output... //JSON becoming standard interchange format b/w computers... developed as alt to XML... like XML but lighter
+	var savlfood = new Spotter("twitter.search",
+						{q:"#avlfood", period:120},				//{key:"value", key:"value"},    120 period will take a 120 s break between the 750ms of feed output...
 						{buffer:true, bufferTimeout:750}		//this JSON code contains setup for the Spotter itself... buffer... bufferTimeout gives you the Twitter data every x seconds
 						);
 	var count = 0 ;
 	var tweetCount = 0;
 						
-	s.register(function(tweet) {								//.register function allows you to send an anonymous function like in jQuery  function() {}
+	savlfood.register(function(tweet) {								//.register function allows you to send an anonymous function like in jQuery  function() {}
 
 		count = count+1;
 		var color;
@@ -28,23 +28,18 @@ function main() {
 		var new_paragraph = $("<p class='"+color+"'>"+profile_image+tweet.text+"</p>");	
  			new_paragraph.hide();
 
-			$("#tweets").prepend(new_paragraph);
+			$("#avlfood").prepend(new_paragraph);
 			new_paragraph.slideDown();
 
-			$("#tweets p:even").css('background-color','#6666cc');
-			$("#tweets p:odd").css('background-color','#F90909');
-			$("#tweets p").css('color','black');
-			$("#tweets p:first-child").css('background-color','black');
-			$("#tweets p:first-child").css('color','white');
-			$("#tweets p:first-child").css('font-weight','bold');
-			$("#tweets p:first-child").css('font-family','sans-serif');
+			$("#avlfood p").css('background-color','black');
+			$("#avlfood p").css('color','white');
 			
 																		//somewhere here add the tweet to the DOM w/ an idCount
 																		//  var idToRemove = tweetArray.unshift();
 	
 																		// $("#"+idToRemove).remove();
 			if (tweetCount === 11)	{
-				$("#tweets p:last-child").remove();
+				$("#avlfood p:last-child").remove();
 				tweetCount = 10;
 			}
 
@@ -62,9 +57,70 @@ function main() {
 		// }
 	});
 
-	
-	s.start();							//starts our Spotter constructor!
 
+		var savlbiz = new Spotter("twitter.search",
+							{q:"#avlbiz", period:120},
+							{buffer:true, bufferTimeout:750}
+							);
+		var countBiz = 0 ;
+		var tweetCountBiz = 0;
+
+		savlbiz.register(function(tweet) {					
+
+			countBiz = countBiz+1;
+			tweetCountBiz = tweetCountBiz + 1;
+
+			var profile_image = "<img src='"+tweet.profile_image_url+"' />";
+
+			var new_paragraph = $("<p>"+profile_image+tweet.text+"</p>");	
+	 			new_paragraph.hide();
+
+				$("#avlbiz").prepend(new_paragraph);
+				new_paragraph.slideDown();
+
+				$("#avlbiz p").css('background-color','black');
+				$("#avlbiz p").css('color','white');
+
+				if (tweetCountBiz === 11)	{
+					$("#avlbiz p:last-child").remove();
+					tweetCountBiz = 10;
+				}
+		});
+				
+				
+				var savlart = new Spotter("twitter.search",
+									{q:"#avlart", period:120},
+									{buffer:true, bufferTimeout:750}
+									);
+				var countArt = 0 ;
+				var tweetCountArt = 0;
+
+				savlart.register(function(tweet) {					
+
+					countArt = countArt+1;
+					tweetCountArt = tweetCountArt + 1;
+
+					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
+
+					var new_paragraph = $("<p>"+profile_image+tweet.text+"</p>");	
+			 			new_paragraph.hide();
+
+						$("#avlart").prepend(new_paragraph);
+						new_paragraph.slideDown();
+
+						$("#avlart p").css('background-color','black');
+						$("#avlart p").css('color','white');
+
+						if (tweetCountArt === 11)	{
+							$("#avlart p:last-child").remove();
+							tweetCountArt = 10;
+						}
+
+		});
+
+	savlfood.start();							//starts our Spotter constructor!
+	savlbiz.start();
+	savlart.start();
 }
 
 main();
