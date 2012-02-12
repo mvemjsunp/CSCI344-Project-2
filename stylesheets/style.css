@@ -1,0 +1,17 @@
+body {
+    background: #eef;
+	color: #000;
+	font-weight: normal;
+}
+
+.magenta {
+	background-color: #f0f;
+}
+
+.cyan {
+	background-color: #0ff;
+}
+#tweets {
+	margin-top: -30;
+		margin-bottom: -30;
+}
