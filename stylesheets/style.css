@@ -14,18 +14,29 @@ h2 {
 	color: #c30000;
 }
 
-#boxleft {
-
+.boxleftyes {
+	float: left;
 	width: 20px;
 	height: 20px;
-	position: absolute;
-	left: 5px;
-	top:5px;
-	background: #ff0000;
-	border: 1px solid #000;
+	position: relative;
+	left: 0px;
+	top: 2px;
+	font-weight: bold;
+	background: #00ff00;
 }
 
-#boxright {
+
+.boxleftno {
+	float: left;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 0px;
+	top: 2px;
+	background: #ff0000;
+}
+
+.boxright {
 
 	width: 300px;
 	background: #0000ff;

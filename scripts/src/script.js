@@ -34,24 +34,31 @@ function firstSpotterObject() {
 				first.register(function(tweet) {	
 					var color;
 					firstSize = firstSize + 1;
-					firstTweetCount = firstTweetCount + 1;
+//					firstTweetCount = firstTweetCount + 1;
 							
 					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
-					if(firstTweetCount%2 === 0) {
-					    color = "'red'";
+					if(tweet.text.match($("#term1").val())) {
+					    color = "'boxleftyes'";
 					} else {
-					    color = "'blue'";
+					    color = "'boxleftno'";
 					}
-
-					var new_paragraph = $("<p class='"+color+"'>"+profile_image+tweet.text+"</p>");
- 					new_paragraph.hide();
-//					tweetCount = tweetCount + 1;
-					$("#search1").prepend(new_paragraph);
-					new_paragraph.fadeIn();
 					
-					if (firstTweetCount === 11)	{
-					 	$("#search1 p:last-child").remove();
-					 	firstTweetCount = 10;
+					// var new_boxleft = $("<p class='"+boxleft+"'>"+&nbsp+"</p>");
+					// new_boxleft.hide();
+					// tweetCount = tweetCount + 1;
+					// $("#search1").prepend(new_boxleft);
+					// new_boxleft.fadeIn();
+
+//					 var new_paragraph = $("<div class='span1 "+color+"'>"+'testing'+"</div>");
+					var new_paragraph = $("<div class="+color+">"+'&nbsp;'+"</div>");
+  					new_paragraph.hide();
+					firstTweetCount = firstTweetCount + 1;
+ 					$("#search1").append(new_paragraph);
+ 					new_paragraph.fadeIn();
+					
+					if (firstTweetCount === 500)	{
+					 	$("#search1 div:first-child").remove();
+					 	firstTweetCount = 499;
 					 }
 
 				});
