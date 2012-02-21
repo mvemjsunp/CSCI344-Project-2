@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+   <title>twitter search</title>
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
-	
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="scripts/lib/spotter.js"></script>
-    <script src="scripts/src/script.js"></script>
+   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+   <script src="scripts/lib/spotter.js"></script>
+   <script src="scripts/src/script.js"></script>
+</head>
+<body>
+<div class="container">
+   <header>
+      <h1>time machine</h1>
+   </header>
 
+	<div class="row">
+		<div id="fetch">
+			<div class="span6">
+	      		<input type="text" placeholder="Enter first search term" id="term1" />
+	      		<button id="search_button1">Go!</button>
+			</div>
+			<div class="span6">
+	      		<input type="text" placeholder="Enter second search term" id="term2" />
+	      		<button id="search_button2">Go!</button>
+			</div>
+	   </div>
+	</div>
 
-  </head>
-
-  <body>
-    <h1>asheville local stream</h1>
-	<br />
-		<div class="span4">
-			<h2 id="avlfoodhead">#avlfood</h2>
-				<div id="avlfood">
-				</div>
-		</div>
-			
-		<div class="span4 offset1">
-			<h2 id="avlbizhead">#avlbiz</h2>
-				<div id="avlbiz">
-				</div>
-		</div>
-			
-			
-		<div class="span4 offset1">
-			<h2 id="avlarthead">#avlart</h2>
-				<div id="avlart">
-				</div>
+	<div class="row">
+		
+		<div class="span6" id="search1">
+			sdfds
 		</div>
 		
-  </body>
+		<div class="span6" id="search2">
+			sdfdf
+		</div>
+		
+	</div>
+	
+</div>
+</body>
 </html>

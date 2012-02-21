@@ -14,22 +14,21 @@ h2 {
 	color: #c30000;
 }
 
-.magenta {
-	background-color: #f0f;
+#boxleft {
+
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 5px;
+	top:5px;
+	background: #ff0000;
+	border: 1px solid #000;
 }
 
-.cyan {
-	background-color: #0ff;
-}
+#boxright {
 
-#avlfood {
-	margin-top: -30;
-	margin-bottom: -30;
 	width: 300px;
-	background-color: #c30000;
-	font-size: 12px;
+	background: #0000ff;
+	border: 1px solid #000;
 }
 
-#avlfood p {
-		padding: 5px;
-}

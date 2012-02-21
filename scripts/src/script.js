@@ -1,126 +1,109 @@
 
+
+
+
 /* author rebekah david <rldavid@unca.edu> */
 
 
 function main() {
-
-	var savlfood = new Spotter("twitter.search",
-						{q:"#avlfood", period:120},				//{key:"value", key:"value"},    120 period will take a 120 s break between the 750ms of feed output...
-						{buffer:true, bufferTimeout:750}		//this JSON code contains setup for the Spotter itself... buffer... bufferTimeout gives you the Twitter data every x seconds
-						);
-	var count = 0 ;
-	var tweetCount = 0;
-						
-	savlfood.register(function(tweet) {								//.register function allows you to send an anonymous function like in jQuery  function() {}
-
-		count = count+1;
-		var color;
-		tweetCount = tweetCount + 1;
-
-		var profile_image = "<img src='"+tweet.profile_image_url+"' />";
-		
-		if(count%2 === 0) {
-			color = "magenta";
-		} else {
-			color = "cyan";
-		}
-		
-		var new_paragraph = $("<p class='"+color+"'>"+profile_image+tweet.text+"</p>");	
- 			new_paragraph.hide();
-
-			$("#avlfood").prepend(new_paragraph);
-			new_paragraph.slideDown();
-
-			$("#avlfood p").css('background-color','black');
-			$("#avlfood p").css('color','white');
-			
-																		//somewhere here add the tweet to the DOM w/ an idCount
-																		//  var idToRemove = tweetArray.unshift();
 	
-																		// $("#"+idToRemove).remove();
-			if (tweetCount === 11)	{
-				$("#avlfood p:last-child").remove();
-				tweetCount = 10;
-			}
-
-/*			$('#tweets p').hover(function() {							//hover changes color, bgcolor, border, weight
-				$(this).css('color','#000000');
-				$(this).css('backgroundColor','#cc33cc');
-				$(this).css('font-weight','bold');
-				$(this).css('border','2px solid #000000');
-			}, function() {
-				$(this).css('color','#000000');
-				$(this).css('backgroundColor','#eeeeff');
-				$(this).css('font-weight','normal');
-				$(this).css('border','none');
-			});					*/
-		// }
+	$("#search_button1").click(function() {
+//		alert($("#term").val());
+//		console.log("whatever"); 		//another way to debug
+		firstSpotterObject();
 	});
-
-
-		var savlbiz = new Spotter("twitter.search",
-							{q:"#avlbiz", period:120},
-							{buffer:true, bufferTimeout:750}
-							);
-		var countBiz = 0 ;
-		var tweetCountBiz = 0;
-
-		savlbiz.register(function(tweet) {					
-
-			countBiz = countBiz+1;
-			tweetCountBiz = tweetCountBiz + 1;
-
-			var profile_image = "<img src='"+tweet.profile_image_url+"' />";
-
-			var new_paragraph = $("<p>"+profile_image+tweet.text+"</p>");	
-	 			new_paragraph.hide();
-
-				$("#avlbiz").prepend(new_paragraph);
-				new_paragraph.slideDown();
-
-				$("#avlbiz p").css('background-color','black');
-				$("#avlbiz p").css('color','white');
-
-				if (tweetCountBiz === 11)	{
-					$("#avlbiz p:last-child").remove();
-					tweetCountBiz = 10;
-				}
-		});
-				
-				
-				var savlart = new Spotter("twitter.search",
-									{q:"#avlart", period:120},
-									{buffer:true, bufferTimeout:750}
-									);
-				var countArt = 0 ;
-				var tweetCountArt = 0;
-
-				savlart.register(function(tweet) {					
-
-					countArt = countArt+1;
-					tweetCountArt = tweetCountArt + 1;
-
-					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
-
-					var new_paragraph = $("<p>"+profile_image+tweet.text+"</p>");	
-			 			new_paragraph.hide();
-
-						$("#avlart").prepend(new_paragraph);
-						new_paragraph.slideDown();
-
-						$("#avlart p").css('background-color','black');
-						$("#avlart p").css('color','white');
-
-						if (tweetCountArt === 11)	{
-							$("#avlart p:last-child").remove();
-							tweetCountArt = 10;
-						}
-
-		});
-
-	savlfood.start();							//starts our Spotter constructor!
-	savlbiz.start();
-	savlart.start();
+	
+	
+	$("#search_button2").click(function() {
+		secondSpotterObject();
+	});
 }
 
-main();
+var firstSize = 0;
+var secondSize = 0;
+
+function firstSpotterObject() {
+		var firstTweetCount = 0;
+
+
+		var first = new Spotter("twitter.search",
+						{q:$("#term1").val(), period:120},
+						{buffer:true, bufferTimeout:750}
+						);
+
+				first.register(function(tweet) {	
+					var color;
+					firstSize = firstSize + 1;
+					firstTweetCount = firstTweetCount + 1;
+							
+					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
+					if(firstTweetCount%2 === 0) {
+					    color = "'red'";
+					} else {
+					    color = "'blue'";
+					}
+
+					var new_paragraph = $("<p class='"+color+"'>"+profile_image+tweet.text+"</p>");
+ 					new_paragraph.hide();
+//					tweetCount = tweetCount + 1;
+					$("#search1").prepend(new_paragraph);
+					new_paragraph.fadeIn();
+					
+					if (firstTweetCount === 11)	{
+					 	$("#search1 p:last-child").remove();
+					 	firstTweetCount = 10;
+					 }
+
+				});
+		first.start();
+};
+			
+			
+function secondSpotterObject() {
+		var secondTweetCount = 0;
+
+
+		var second = new Spotter("twitter.search",
+						{q:$("#term2").val(), period:120},
+						{buffer:true, bufferTimeout:750}
+						);	
+								
+			var second = new Spotter("twitter.search",
+							{q:$("#term2").val(), period:120},
+							{buffer:true, bufferTimeout:750}
+							);
+
+					second.register(function(tweet) {	
+						var color;
+						secondSize = secondSize + 1;
+						secondTweetCount = secondTweetCount + 2;
+
+						var profile_image = "<img src='"+tweet.profile_image_url+"' />";
+						if(secondTweetCount%2 === 0) {
+						    color = "'red'";
+						} else {
+						    color = "'blue'";
+						}
+
+						var new_paragraph = $("<p class='"+color+"'>"+profile_image+tweet.text+"</p>");
+	 					new_paragraph.hide();
+	//					tweetCount = tweetCount + 1;
+						$("#search2").prepend(new_paragraph);
+						new_paragraph.fadeIn();
+
+						if (secondTweetCount === 11)	{
+						 	$("#search2 p:last-child").remove();
+						 	secondTweetCount = 10;
+						 }
+						
+				});
+		second.start();
+};
+
+							//starts our Spotter constructor!
+
+
+
+$(document).ready(function() {
+	main();
+});
