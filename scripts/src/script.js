@@ -9,16 +9,26 @@ function main() {
 	
 
 
-	$("#search_button1").click(function() {
+
+	$("#search_button").click(function() {
+		$('#mask').hide();
+		$('.window').hide();
 //		alert($("#term").val());
 //		console.log("whatever"); 		//another way to debug
 		firstSpotterObject();
-	});
-	
-	
-	$("#search_button2").click(function() {
 		secondSpotterObject();
 	});
+	
+	
+	// $("#inputsection").keyup(function(e) {		 //to make enter/return act as submit 
+	// 	if(e.keyCode == "13") {
+	// 		$("#nothing_yet").hide();
+	// 		$(".parts_of_speech").fadeIn("slow");
+	// 		$("#tweets").animate({height: "135px"});
+	// 		main();
+	// 	}
+	// });
+	
 	
 //	if (bartopCount > 30) {
 	 	

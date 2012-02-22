@@ -5,25 +5,77 @@
    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+	<script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js"></script>
    <script src="scripts/lib/spotter.js"></script>
    <script src="scripts/src/script.js"></script>
+	<script>
+$(document).ready(function() {
+		launchWindow('#modal-from-dom');
+		
+		$('#search_button .close').click(function () {
+			$('#mask').hide();
+			$('.window').hide();
+		});
+		
+		$('#mask').click(function () {
+			$(this).hide();
+			$('.window').hide();
+		});
+});
+
+function launchWindow(id) {
+	var maskHeight = $(document).height();
+	var maskWidth = $(window).width();
+	
+	$('#mask').css({'width':maskWidth,'height':maskHeight});
+	
+	$('#mask').fadeIn(1000);
+	$('#mask').fadeTo("slow",0.8);
+	
+	var winH = $(window).height();
+	var winW = $(window).width();
+	
+	$(id).css('top', winH/2-$(id).height());
+	$(id).css('left', winW/2-$(id).width()/2);
+	
+	$(id).fadeIn(2000);
+	
+}
+	</script>
+	
+	
 </head>
 <body>
 <div class="container">
    <header>
-      <h1>rich vs poor</h1>
+      <h1>one vs two</h1>
    </header>
+	<div id="boxes">
+		<div id="modal-from-dom" class="window">
+				<div class="d.header">
+					<p>Enter your search terms to compare results.</p>
+				
+					<input type="text" placeholder="Enter first search term" id="term1" />
+					<input type="text" placeholder="Enter second search term" id="term2" />		
+				</div>
+			
+	      		<div class="d-login">
+					<button id="search_button" class="close">Go!</button>
+				</div>
+		</div>
+	</div>
+
+	<div id="mask">
+	</div>
+	
+	</div>
 
 	<div class="row">
 		<div id="fetch">
 			<div class="span6">
-	      		<input type="text" placeholder="Enter first search term" id="term1" />
-	      		<button id="search_button1">Go!</button>
-			</div>
-			<div class="span6">
-	      		<input type="text" placeholder="Enter second search term" id="term2" />
-	      		<button id="search_button2">Go!</button>
+	      		<p></p>
 			</div>
 	   </div>
 	</div>

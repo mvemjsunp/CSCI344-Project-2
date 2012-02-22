@@ -44,3 +44,63 @@ h2 {
 	border: 1px solid #fff;
 }
 
+#mask {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:9000;
+	background-color:#000;
+	display:none;
+}
+
+.window {
+	position:absolute;
+	width:440px;
+	height:200px;
+	display:none;
+	z-index:9999;
+	padding:20px;
+}
+
+#modal-from-dom {
+	width:375px;
+	height:203px;
+	background: #fff;
+}
+
+
+#boxes .window {
+	position:absolute;width:440px;height:200px;display:none;z-index:9999;padding:20px;
+}
+	
+#boxes #dialog {
+	width:375px;height:203px;padding:10px;background-color:#ffffff;
+}
+	
+#boxes #modal-from-dom {
+	width:375px;height:203px;
+}
+	
+#modal-from-dom .d-header {
+	background:#fff;
+	no-repeat 0 0 transparent;
+	width:375px;
+	height:150px;
+}
+	
+#modal-from-dom .d-header input {
+	position:relative;
+	top:60px;left:100px;border:3px solid #cccccc;height:22px;width:200px;font-size:15px;padding:5px;margin-top:4px;
+}
+
+#modal-from-dom .d-blank {
+	float:left;
+	background:#fff;
+	width:267px;
+	height:53px;
+}
+
+#modal-from-dom .d-login {
+	float:left;width:108px;height:53px;
+}
+
