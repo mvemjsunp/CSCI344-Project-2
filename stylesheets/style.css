@@ -19,27 +19,28 @@ h2 {
 	width: 20px;
 	height: 20px;
 	position: relative;
-	left: 0px;
-	top: 2px;
+	left: 2px;
+	top: 5px;
 	font-weight: bold;
 	background: #00ff00;
 }
 
 
-.boxleftno {
+.boxrightyes {
 	float: left;
 	width: 20px;
 	height: 20px;
 	position: relative;
-	left: 0px;
-	top: 2px;
+	left: 2px;
+	top: 5px;
 	background: #ff0000;
 }
 
-.boxright {
-
-	width: 300px;
-	background: #0000ff;
-	border: 1px solid #000;
+#bartop {
+	width:600px;
+	height:23px;
+	overflow: auto;
+	background: #000000;
+	border: 1px solid #fff;
 }
 
