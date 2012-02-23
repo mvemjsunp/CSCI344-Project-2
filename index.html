@@ -43,6 +43,7 @@ function launchWindow(id) {
 	$(id).fadeIn(2000);
 	
 }
+
 	</script>
 	
 	
@@ -50,27 +51,27 @@ function launchWindow(id) {
 <body>
 <div class="container">
    <header>
-      <h1>one vs two</h1>
+      <h1 class="offset3">one vs two</h1>
    </header>
 	<div id="boxes">
 		<div id="modal-from-dom" class="window">
 				<div class="d.header">
-					<p>Enter your search terms to compare results.</p>
+					<p><strong>Enter your search terms to compare results.</strong></p>
+					
 				
 					<input type="text" placeholder="Enter first search term" id="term1" />
 					<input type="text" placeholder="Enter second search term" id="term2" />		
 				</div>
 			
+				<p><em>Suggestions for search terms: celebrities (Britney vs. Madonna), opposites (rich vs. poor), random (disgusting vs. unicorn)</p>
 	      		<div class="d-login">
 					<button id="search_button" class="close">Go!</button>
 				</div>
 		</div>
 	</div>
 
-	<div id="mask">
-	</div>
 	
-	</div>
+
 
 	<div class="row">
 		<div id="fetch">
@@ -81,7 +82,7 @@ function launchWindow(id) {
 	</div>
 	
 	<div class="row">
-		<div class="span10 offset1" id="bartop">
+		<div class="span12 offset1" id="bartop">
 			&nbsp;
 		</div>
 	</div>
@@ -92,14 +93,17 @@ function launchWindow(id) {
 
 	<div class="row">
 		
-		<div class="span6" id="search1">
+		<div class="span4 offset1" id="search1">
+		</div>
+		
+		<div class="span4 offset1" id="search2">
 			
 		</div>
 		
-		<div class="span5" id="search2">
-			
-		</div>
-		
+	</div>
+	
+	
+	<div id="mask">
 	</div>
 	
 </div>

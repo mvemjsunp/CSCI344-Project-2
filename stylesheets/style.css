@@ -1,5 +1,5 @@
 body {
-    background: #eef;
+    background: #f9f9f9;
 	color: #000;
 	font-weight: normal;
 	font-family: sans-serif;
@@ -22,7 +22,7 @@ h2 {
 	left: 2px;
 	top: 5px;
 	font-weight: bold;
-	background: #00ff00;
+	background: #f9009f;
 }
 
 
@@ -33,15 +33,15 @@ h2 {
 	position: relative;
 	left: 2px;
 	top: 5px;
-	background: #ff0000;
+	background: #f9f900;
 }
 
 #bartop {
-	width:600px;
+	width:700px;
 	height:23px;
 	overflow: auto;
 	background: #000000;
-	border: 1px solid #fff;
+	border: 3px solid #fff;
 }
 
 #mask {
@@ -78,7 +78,7 @@ h2 {
 }
 	
 #boxes #modal-from-dom {
-	width:375px;height:203px;
+	width:275px;height:203px;
 }
 	
 #modal-from-dom .d-header {
@@ -104,3 +104,15 @@ h2 {
 	float:left;width:108px;height:53px;
 }
 
+
+div .tweetshow {
+/*  display: none;*/
+  visibility: hidden;
+  position: absolute;
+  width: 280px;
+  padding: 10px;
+  background: #eeeeee;
+  color: #000000;
+  border: 1px solid #1a1a1a;
+  font-size: 90%;
+}

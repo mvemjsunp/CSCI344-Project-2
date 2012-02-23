@@ -36,7 +36,7 @@ function main() {
 }
 
 		var bartopCount = 0;
-
+		var secondTweetCount = 0;
 
 function firstSpotterObject() {
 		var firstTweetCount = 0;
@@ -57,19 +57,36 @@ function firstSpotterObject() {
 							
 					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
 
-					
-					// var new_boxleft = $("<p class='"+boxleft+"'>"+&nbsp+"</p>");
-					// new_boxleft.hide();
-					// tweetCount = tweetCount + 1;
-					// $("#search1").prepend(new_boxleft);
-					// new_boxleft.fadeIn();
-
-//					 var new_paragraph = $("<div class='span1 "+color+"'>"+'testing'+"</div>");
-					var new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
+					 var new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
+					var tweetpopup = $("<div class='tweetshow'><p>testing</p>"+tweet.text+"</div>");
   					new_paragraph.hide();
 					firstTweetCount = firstTweetCount + 1;
  					$("#search1").append(new_paragraph);
  					new_paragraph.fadeIn();
+					$(new_paragraph).hover(
+						function () {
+							$(new_paragraph).append($(tweetpopup));
+							$('.tweetshow').css('visibility', 'visible');
+							$(this).stop().fadeTo('slow',0.1);
+
+					});		
+							// new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"<div class='tweetshow'><p>"+tweet.text+"</p></div></div>");
+							// $('.tweetshow').css('visibility', 'visible');	
+
+
+				// 	new_paragraph.hover(function() {
+				// 	new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"<div class='tweetshow'><p>"+tweet.text+"</p></div></div>");
+				// 	$('.tweetshow').css('visibility', 'visible');
+				// )};
+
+					// $('.tweetshow').hover(
+					// function() {
+					//     	$(this).stop().fadeTo('slow',0.4);
+					// },
+					// function() {
+					//     	$(this).stop().fadeTo('slow',1);
+					// });
+
 
 
 					var new_leftBoxTop = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
@@ -85,9 +102,9 @@ function firstSpotterObject() {
 					//     color = "'boxleftno'";
 					// }
 					
-					if (firstTweetCount === 500)	{
+					if (firstTweetCount === 20)	{
 					 	$("#search1 div:first-child").remove();
-					 	firstTweetCount = 499;
+					 	firstTweetCount = 19;
 					 }
 
 				});
@@ -96,7 +113,7 @@ function firstSpotterObject() {
 			
 			
 function secondSpotterObject() {
-		var secondTweetCount = 0;
+
 		var secondSize = 0;
 
 		var second = new Spotter("twitter.search",
@@ -130,9 +147,9 @@ function secondSpotterObject() {
 					//     color = "'boxleftno'";
 					// }
 
-					if (secondTweetCount === 500)	{
+					if (secondTweetCount === 300)	{
 					 	$("#search2 div:first-child").remove();
-					 	secondTweetCount = 499;
+					 	secondTweetCount = 299;
 					 }
 						
 				});
