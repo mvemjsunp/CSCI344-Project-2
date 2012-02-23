@@ -70,11 +70,19 @@ h2 {
 
 
 #boxes .window {
-	position:absolute;width:440px;height:200px;display:none;z-index:9999;padding:20px;
+	position:absolute;
+	width:440px;
+	height:200px;
+	display:none;
+	z-index:9999;
+	padding:20px;
 }
 	
 #boxes #dialog {
-	width:375px;height:203px;padding:10px;background-color:#ffffff;
+	width:375px;
+	height:203px;
+	padding:10px;
+	background-color:#ffffff;
 }
 	
 #boxes #modal-from-dom {
@@ -90,7 +98,14 @@ h2 {
 	
 #modal-from-dom .d-header input {
 	position:relative;
-	top:60px;left:100px;border:3px solid #cccccc;height:22px;width:200px;font-size:15px;padding:5px;margin-top:4px;
+	top:60px;left:
+	100px;border:
+	3px solid #cccccc;
+	height:22px;
+	width:200px;
+	font-size:15px;
+	padding:5px;
+	margin-top:4px;
 }
 
 #modal-from-dom .d-blank {
@@ -101,7 +116,9 @@ h2 {
 }
 
 #modal-from-dom .d-login {
-	float:left;width:108px;height:53px;
+	float:left;
+	width:108px;
+	height:53px;
 }
 
 
@@ -115,4 +132,5 @@ div .tweetshow {
   color: #000000;
   border: 1px solid #1a1a1a;
   font-size: 90%;
+  z-index: 15000;
 }
