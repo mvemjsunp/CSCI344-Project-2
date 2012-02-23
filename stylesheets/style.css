@@ -107,7 +107,7 @@ h2 {
 
 div .tweetshow {
 /*  display: none;*/
-  visibility: hidden;
+/*  visibility: hidden;*/
   position: absolute;
   width: 280px;
   padding: 10px;

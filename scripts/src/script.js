@@ -57,37 +57,22 @@ function firstSpotterObject() {
 							
 					var profile_image = "<img src='"+tweet.profile_image_url+"' />";
 
-					 var new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
-					var tweetpopup = $("<div class='tweetshow'><p>testing</p>"+tweet.text+"</div>");
+					var new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
+					var tweetpopup = $("<div class='tweetshow'><p>testing</p>"+profile_image+tweet.text+"</div>");
+					
   					new_paragraph.hide();
 					firstTweetCount = firstTweetCount + 1;
  					$("#search1").append(new_paragraph);
  					new_paragraph.fadeIn();
-					$(new_paragraph).hover(
-						function () {
-							$(new_paragraph).append($(tweetpopup));
-							$('.tweetshow').css('visibility', 'visible');
-							$(this).stop().fadeTo('slow',0.1);
-
-					});		
-							// new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"<div class='tweetshow'><p>"+tweet.text+"</p></div></div>");
-							// $('.tweetshow').css('visibility', 'visible');	
-
-
-				// 	new_paragraph.hover(function() {
-				// 	new_paragraph = $("<div class='boxleftyes'>"+'&nbsp;'+"<div class='tweetshow'><p>"+tweet.text+"</p></div></div>");
-				// 	$('.tweetshow').css('visibility', 'visible');
-				// )};
-
-					// $('.tweetshow').hover(
-					// function() {
-					//     	$(this).stop().fadeTo('slow',0.4);
-					// },
-					// function() {
-					//     	$(this).stop().fadeTo('slow',1);
-					// });
-
-
+					$(new_paragraph).mouseenter(function () {
+							tweetpopup.hide();
+							$(new_paragraph).append(tweetpopup);
+							tweetpopup.fadeIn();
+					});	
+					$(new_paragraph).mouseleave(function() {
+						tweetpopup.remove();
+					});	
+						
 
 					var new_leftBoxTop = $("<div class='boxleftyes'>"+'&nbsp;'+"</div>");
   					new_leftBoxTop.hide();
